@@ -1,6 +1,50 @@
-# Prolongation von BaufiSmart Vorgängen
+# Prolongation von BaufiSmart oder Classic Vorgängen
 
-# Dokumentation
+Es wird ein Endpunkt bereitgestellt, der anhand der mitgelieferten Parameter erkennt, ob es sich um einen BaufiSmart oder um einen Classic-Vorgang handelt.
+Dementsprechend wird der Aufruf für die Prolongation an den passenden Service weitergeleitet, um die Prolongation zu erstellen.
+Für Classic-Vorgänge wird in diesem Prozess ein BaufiSmart-Vorgang erzeugt.
+
+Bei Erfolg wird der Prolongations-Vorgang in BaufiSmart geöffnet.
+
+Da der Prozess der Vorbereitung des Vorgangs einige Zeit in Anspruch nimmt, wird während dieser Zeit ein Warte-Fenster angezeigt.
+
+Es ist möglich, dass die Prolongation nicht durchgeführt werden kann (Fehlerfall). In diesem Fall wird eine Fehlermeldung angezeigt. In diesem Fall sollte Kontakt zu Europace aufgenommen werden.
+
+## Aufruf
+
+Der Service ist erreichbar unter
+
+```
+GET https://www.europace2.de/anschlussfinanzierung/<vorgangsNummer>/<datenKontext>/<quelle>
+```
+
+Als Header muss X-Authentication mit Berechtigungs-JWT-Token des aktuellen Nutzers gesetzt sein.
+
+## Parameter
+
+Alle Parameter werden als Pfad-Parameter übergeben.
+
+#### vorgangsnummer
+
+BaufiSmart-Vorgangsnummer bzw. Classic-Fallnummer
+
+#### datenKontext
+
+ECHTGESCHAEFT bzw. TEST_MODUS
+
+#### quelle
+
+Als BaufiSmart-Quellen werden akzeptiert: 'ep2', 'baufismart' und 'bs'.
+
+Als Classic-Quellen werden akzeptiert: 'classic', 'omc' und 'epc'.
+
+
+
+# Prolongation von BaufiSmart Vorgängen - Direkter Aufruf
+
+Für die Prolongation von BaufiSmart-Vorgängen wird der Aufruf auf folgende API weitergeleitet. Diese API kann nach der folgenden Beschreibung auch direkt angesprochen werden. 
+
+## Dokumentation
 
 Um einen bestehenden BaufiSmart Vorgang zu prolongieren, muss zunächst ein HTTP POST Request geschickt werden:
  
