@@ -22,7 +22,7 @@ Als Header muss X-Authentication mit Berechtigungs-JWT-Token des aktuellen Nutze
 
 ## Parameter
 
-Alle Parameter werden als Pfad-Parameter übergeben.
+Folgende Parameter werden als Pfad-Parameter übergeben.
 
 #### vorgangsnummer
 
@@ -38,7 +38,39 @@ Als BaufiSmart-Quellen werden akzeptiert: 'ep2', 'baufismart' und 'bs'.
 
 Als Classic-Quellen werden akzeptiert: 'classic', 'omc' und 'epc'.
 
+## Nutzung der API in No-Browser-Clients
 
+Wird die API über einen Client angebunden, in dem kein Browser-Redirect stattfinden kann,
+kann oben genannte URL mit dem zusätzlichen Query-Parameter `noBrowserRedirect=true` aufgerufen werden.
+
+```
+GET https://www.europace2.de/anschlussfinanzierung/<vorgangsNummer>/<datenKontext>/<quelle>?noBrowserRedirect=true
+```
+
+Bei diesem Aufruf wird ein Status-JSON mit folgendem Format zurückgegeben:
+
+```
+{
+    "status": "in Progress",
+    "vorgangsNummer": "<vorgangsnummer>"
+}
+```
+
+Über den Aufruf von
+
+```
+GET https://www.europace2.de/anschlussfinanzierung/<vorgangsNummer>/progress?noBrowserRedirect=true
+```
+
+kann der aktuelle Status abgefragt werden. Ist die Prolongation abgeschlossen, wird ein JSON-Objekt mit folgendem Format zurückgegeben:
+
+```
+{
+    "status": "done",
+    "vorgangsNummer": "<alte vorgangsnummer>",
+    "newVorgangsNummer": "<neue vorgangsnummer>"
+}
+```
 
 # Prolongation von BaufiSmart Vorgängen - Direkter Aufruf
 
