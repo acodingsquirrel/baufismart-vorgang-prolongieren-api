@@ -104,5 +104,6 @@ Mögliche Ursachen können sein:
 Achtung: Der Vorgang wird für die Prolongation vorbereitet, so dass die Daten entsprechend verändert werden.
 Wenn der Vorgang nicht prolongiert werden kann, wird der Datensatz nicht verändert. In diesem Fall wird ein 200 OK und die Json-Response geliefert.
 
-# Nutzungsbedingungen
-Mit der Verwendung dieser API [stimme ich den Nutzungsbedingungen](https://developer.europace.de/terms/) zu.
+## Nutzungsbedingungen
+Die APIs werden unter folgenden [Nutzungsbedingungen](https://developer.europace.de/terms/) zur Verfügung gestellt
+
