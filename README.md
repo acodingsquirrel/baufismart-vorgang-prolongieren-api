@@ -1,5 +1,10 @@
-# Prolongation von BaufiSmart oder Classic Vorgängen
+# Beschreibung Prolongieren-API
 
+Die Prolongieren-API dient dazu einen bestehenden Classic-Vorgang für eine Anschlussfinanzierung nach BaufiSmart zu übertragen.
+Die API erzeugt einen neuen BaufiSmart-Vorgang ohne Antrag. Der Abschluss und die Berechnung der Anschlussfinanzierung findet dann in BaufiSmart und nicht über die API statt. Dafür werden in BaufiSmart die Vorschläge berechnet und anschließend der Anschlussfinanzierungsvorschlag angenommen.
+Einen bestehenden BaufiSmart Vorgang prolongiert man am besten in demselben Vorgang, in dem bereits die erste Finanzierung stattgefunden hat. In BaufiSmart ist ein Vorgang eine Klammer um die Finanzierungen der Antragsteller. Die initiale Finanzierung und eventuell folgende Kapitalbeschaffungen und Anschlussfinanzierungen können in diesem Vorgang stattfinden.
+
+# Prolongation von BaufiSmart oder Classic Vorgängen
 Es wird ein Endpunkt bereitgestellt, der anhand der mitgelieferten Parameter erkennt, ob es sich um einen BaufiSmart oder um einen Classic-Vorgang handelt.
 Dementsprechend wird der Aufruf für die Prolongation an den passenden Service weitergeleitet, um die Prolongation zu erstellen.
 Für Classic-Vorgänge wird in diesem Prozess ein BaufiSmart-Vorgang erzeugt.
