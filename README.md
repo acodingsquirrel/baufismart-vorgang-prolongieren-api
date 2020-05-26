@@ -6,14 +6,14 @@ Einen bestehenden BaufiSmart Vorgang prolongiert man am besten in demselben Vorg
 
 # Prolongation von BaufiSmart oder Classic Vorgängen
 Es wird ein Endpunkt bereitgestellt, der anhand der mitgelieferten Parameter erkennt, ob es sich um einen BaufiSmart oder um einen Classic-Vorgang handelt.
-Dementsprechend wird der Aufruf für die Prolongation an den passenden Service weitergeleitet, um die Prolongation zu erstellen.
+Dementsprechend wird der Aufruf für die Prolongation an den passenden Service weitergeleitet, damit die Anschlussfinanzierung dann in BaufiSmart abgeschlossen werden kann.
 Für Classic-Vorgänge wird in diesem Prozess ein BaufiSmart-Vorgang erzeugt.
 
 Bei Erfolg wird der Prolongations-Vorgang in BaufiSmart geöffnet.
 
 Da der Prozess der Vorbereitung des Vorgangs einige Zeit in Anspruch nimmt, wird während dieser Zeit ein Warte-Fenster angezeigt.
 
-Es ist möglich, dass die Prolongation nicht durchgeführt werden kann (Fehlerfall). In diesem Fall wird eine Fehlermeldung angezeigt. In diesem Fall sollte Kontakt zu Europace aufgenommen werden.
+Es ist möglich, dass das Anlegen eines BaufiSmart Vorgangs nicht durchgeführt werden kann (Fehlerfall). In diesem Fall wird eine Fehlermeldung angezeigt. In diesem Fall sollte Kontakt zu Europace aufgenommen werden.
 
 ## Aufruf
 
